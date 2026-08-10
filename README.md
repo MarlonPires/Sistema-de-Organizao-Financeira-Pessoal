@@ -15,7 +15,7 @@ O desafio pedia uma solução capaz de registrar, organizar, analisar e consulta
 ## Estrutura do repositório
 
 ```
-financas-household-postgres/
+finances-household-postgres/
 ├── sql/
 │   ├── 01_schema.sql       # DDL: tipos, tabelas, índices e views
 │   └── 02_seed_data.sql    # Dados de exemplo para testes
@@ -50,16 +50,21 @@ O schema já inclui views prontas para consulta e geração de insights:
 
 ## Como rodar
 
-1. Crie um banco de dados no PostgreSQL (ex: `financas_household`).
-2. Execute o schema:
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/lucasroberti/finances-household-postgres.git
+   cd finances-household-postgres
+   ```
+2. Crie um banco de dados no PostgreSQL (ex: `financas_household`).
+3. Execute o schema:
    ```bash
    psql -d financas_household -f sql/01_schema.sql
    ```
-3. (Opcional) Popule com dados de exemplo:
+4. (Opcional) Popule com dados de exemplo:
    ```bash
    psql -d financas_household -f sql/02_seed_data.sql
    ```
-4. Explore as views, por exemplo:
+5. Explore as views, por exemplo:
    ```sql
    SELECT * FROM vw_gastos_por_categoria_mes;
    ```
